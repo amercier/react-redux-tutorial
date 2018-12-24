@@ -6,16 +6,67 @@
     "react-scripts": "^2.1.2"
   },
   "devDependencies": {
-    "codecov": "^3.1.0"
+    "codecov": "^3.1.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-unicorn": "^6.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx ."
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "airbnb",
+      "plugin:react/recommended",
+      "plugin:unicorn/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "node": false
+    },
+    "rules": {
+      "unicorn/filename-case": [
+        "error",
+        {
+          "case": "camelCase"
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "src/**/*.js"
+        ],
+        "rules": {
+          "import/prefer-default-export": "off",
+          "import/no-default-export": "error"
+        }
+      },
+      {
+        "files": [
+          "integration/**",
+          "src/**/*.spec.*",
+          "src/setupTests.js"
+        ],
+        "env": {
+          "jest": true
+        },
+        "rules": {
+          "import/no-extraneous-dependencies": [
+            "error",
+            {
+              "devDependencies": true
+            }
+          ]
+        }
+      }
+    ]
   },
   "browserslist": [
     ">0.2%",
