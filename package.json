@@ -7,6 +7,7 @@
   },
   "devDependencies": {
     "codecov": "^3.1.0",
+    "cross-env": "^5.2.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
@@ -32,7 +33,7 @@
       "prettier --list-different"
     ],
     "*.{js,jsx}": [
-      "eslint --ignore-pattern flow-typed/",
+      "eslint",
       "cross-env CI=run-once react-scripts test --bail --findRelatedTests"
     ]
   },
