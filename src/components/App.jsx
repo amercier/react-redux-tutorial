@@ -1,6 +1,18 @@
 import React from 'react';
+import { arrayOf } from 'prop-types';
 import './App.css';
 
-const App = () => <div className="app">React Redux Tutorial for Beginners</div>;
+import Stories from './Stories';
+import Story from './Story';
+
+const App = ({ stories }) => (
+  <div className="app">
+    <Stories stories={stories} />
+  </div>
+);
+
+App.propTypes = {
+  stories: arrayOf(Story.propTypes.story).isRequired,
+};
 
 export default App;
