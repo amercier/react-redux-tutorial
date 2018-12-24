@@ -61,12 +61,7 @@
       "node": false
     },
     "rules": {
-      "unicorn/filename-case": [
-        "error",
-        {
-          "case": "camelCase"
-        }
-      ]
+      "unicorn/filename-case": "off"
     },
     "overrides": [
       {
