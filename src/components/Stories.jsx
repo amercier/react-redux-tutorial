@@ -1,5 +1,8 @@
 import React from 'react';
 import { func, arrayOf } from 'prop-types';
+import { connect } from 'react-redux';
+import { doArchiveStory } from '../actions/archive';
+import { getReadableStories } from '../selectors/story';
 import './Stories.css';
 
 import Story from './Story';
@@ -52,4 +55,15 @@ Stories.propTypes = {
   onArchive: func.isRequired,
 };
 
-export default Stories;
+const mapStateToProps = state => ({
+  stories: getReadableStories(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  onArchive: id => dispatch(doArchiveStory(id)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Stories);
