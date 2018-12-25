@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf } from 'prop-types';
+import { func, arrayOf } from 'prop-types';
 import './Stories.css';
 
 import Story from './Story';
@@ -26,7 +26,7 @@ const COLUMNS = {
   },
 };
 
-const Stories = ({ stories }) => (
+const Stories = ({ stories, onArchive }) => (
   <div className="stories">
     <div className="stories-header">
       {Object.keys(COLUMNS).map(key => (
@@ -37,13 +37,19 @@ const Stories = ({ stories }) => (
     </div>
 
     {(stories || []).map(story => (
-      <Story key={story.objectId} story={story} columns={COLUMNS} />
+      <Story
+        key={story.objectId}
+        story={story}
+        columns={COLUMNS}
+        onArchive={onArchive}
+      />
     ))}
   </div>
 );
 
 Stories.propTypes = {
   stories: arrayOf(Story.propTypes.story).isRequired,
+  onArchive: func.isRequired,
 };
 
 export default Stories;

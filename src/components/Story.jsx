@@ -1,9 +1,10 @@
 import React from 'react';
-import { number, string, shape } from 'prop-types';
+import { number, string, func, shape } from 'prop-types';
+import { ButtonInline } from './Button';
 import './Story.css';
 
-const Story = ({ story, columns }) => {
-  const { title, url, author, comments, points } = story;
+const Story = ({ story, columns, onArchive }) => {
+  const { title, url, author, comments, points, objectId } = story;
 
   return (
     <div className="story">
@@ -13,7 +14,9 @@ const Story = ({ story, columns }) => {
       <span style={{ width: columns.author.width }}>{author}</span>
       <span style={{ width: columns.comments.width }}>{comments}</span>
       <span style={{ width: columns.points.width }}>{points}</span>
-      <span style={{ width: columns.archive.width }} />
+      <span style={{ width: columns.archive.width }}>
+        <ButtonInline onClick={() => onArchive(objectId)}>Archive</ButtonInline>
+      </span>
     </div>
   );
 };
@@ -39,6 +42,7 @@ Story.propTypes = {
     points: style.isRequired,
     archive: style.isRequired,
   }).isRequired,
+  onArchive: func.isRequired,
 };
 
 export default Story;
