@@ -2,29 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import store from './store';
 import * as serviceWorker from './serviceWorker';
 
-const stories = [
-  {
-    title: 'React',
-    url: 'https://facebook.github.io/react/',
-    author: 'Jordan Walke',
-    comments: 3,
-    points: 4,
-    objectId: 0,
-  },
-  {
-    title: 'Redux',
-    url: 'https://github.com/reactjs/redux',
-    author: 'Dan Abramov, Andrew Clark',
-    comments: 2,
-    points: 5,
-    objectId: 1,
-  },
-];
-
 ReactDOM.render(
-  <App stories={stories} onArchive={() => {}} />,
+  <App stories={store.getState()} onArchive={() => {}} />,
   document.getElementById('root'),
 );
 
