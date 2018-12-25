@@ -1,7 +1,33 @@
 import React from 'react';
 import { number, string, func, shape } from 'prop-types';
+import { connect } from 'react-redux';
+import { doArchiveStory } from '../actions/archive';
 import { ButtonInline } from './Button';
 import './Story.css';
+
+const style = shape({
+  label: string,
+  width: string.isRequired,
+});
+
+export const StoryProptypes = {
+  story: shape({
+    title: string.isRequired,
+    url: string.isRequired,
+    author: string.isRequired,
+    comments: number.isRequired,
+    points: number.isRequired,
+    objectId: number.isRequired,
+  }).isRequired,
+  columns: shape({
+    title: style.isRequired,
+    author: style.isRequired,
+    comments: style.isRequired,
+    points: style.isRequired,
+    archive: style.isRequired,
+  }).isRequired,
+  onArchive: func.isRequired,
+};
 
 const Story = ({ story, columns, onArchive }) => {
   const { title, url, author, comments, points, objectId } = story;
@@ -21,28 +47,13 @@ const Story = ({ story, columns, onArchive }) => {
   );
 };
 
-const style = shape({
-  label: string,
-  width: string.isRequired,
+Story.propTypes = StoryProptypes;
+
+const mapDispatchToProps = dispatch => ({
+  onArchive: id => dispatch(doArchiveStory(id)),
 });
 
-Story.propTypes = {
-  story: shape({
-    title: string.isRequired,
-    url: string.isRequired,
-    author: string.isRequired,
-    comments: number.isRequired,
-    points: number.isRequired,
-    objectId: number.isRequired,
-  }).isRequired,
-  columns: shape({
-    title: style.isRequired,
-    author: style.isRequired,
-    comments: style.isRequired,
-    points: style.isRequired,
-    archive: style.isRequired,
-  }).isRequired,
-  onArchive: func.isRequired,
-};
-
-export default Story;
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Story);
