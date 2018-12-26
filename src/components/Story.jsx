@@ -12,12 +12,12 @@ const style = shape({
 
 export const StoryProptypes = {
   story: shape({
-    title: string.isRequired,
-    url: string.isRequired,
-    author: string.isRequired,
-    comments: number.isRequired,
-    points: number.isRequired,
-    objectId: number.isRequired,
+    title: string,
+    url: string,
+    author: string,
+    num_comments: number,
+    points: number,
+    objectID: string,
   }).isRequired,
   columns: shape({
     title: style.isRequired,
@@ -30,7 +30,14 @@ export const StoryProptypes = {
 };
 
 const Story = ({ story, columns, onArchive }) => {
-  const { title, url, author, comments, points, objectId } = story;
+  const {
+    title,
+    url,
+    author,
+    num_comments: comments,
+    points,
+    objectID,
+  } = story;
 
   return (
     <div className="story">
@@ -41,7 +48,9 @@ const Story = ({ story, columns, onArchive }) => {
       <span style={{ width: columns.comments.width }}>{comments}</span>
       <span style={{ width: columns.points.width }}>{points}</span>
       <span style={{ width: columns.archive.width }}>
-        <ButtonInline onClick={() => onArchive(objectId)}>Archive</ButtonInline>
+        <ButtonInline type="button" onClick={() => onArchive(objectID)}>
+          Archive
+        </ButtonInline>
       </span>
     </div>
   );
