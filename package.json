@@ -1,13 +1,19 @@
 {
   "private": true,
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "^2.1.2"
+    "react-redux": "^6.0.0",
+    "react-scripts": "^2.1.2",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.2"
   },
   "devDependencies": {
     "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
+    "deep-freeze": "^0.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
@@ -47,6 +53,7 @@
     "trailingComma": "all"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "extends": [
       "airbnb",
       "plugin:react/recommended",
@@ -61,12 +68,7 @@
       "node": false
     },
     "rules": {
-      "unicorn/filename-case": [
-        "error",
-        {
-          "case": "camelCase"
-        }
-      ]
+      "unicorn/filename-case": "off"
     },
     "overrides": [
       {
@@ -74,8 +76,7 @@
           "src/**/*.js"
         ],
         "rules": {
-          "import/prefer-default-export": "off",
-          "import/no-default-export": "error"
+          "import/prefer-default-export": "off"
         }
       },
       {
