@@ -10,6 +10,6 @@ describe('story action', () => {
     };
     const action = doAddStories(stories);
 
-    expect(action).toEqual(expectedAction);
+    expect(action).toStrictEqual(expectedAction);
   });
 });

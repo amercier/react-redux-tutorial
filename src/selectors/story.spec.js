@@ -15,6 +15,6 @@ describe('story selector', () => {
     const expectedReadableStories = [{ objectID: '2', title: 'bar' }];
     const readableStories = getReadableStories(state);
 
-    expect(readableStories).toEqual(expectedReadableStories);
+    expect(readableStories).toStrictEqual(expectedReadableStories);
   });
 });

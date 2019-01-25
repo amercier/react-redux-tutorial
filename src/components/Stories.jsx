@@ -28,6 +28,14 @@ const COLUMNS = {
   },
 };
 
+/**
+ * Display stories.
+ *
+ * @param {Object} props - Component properties.
+ * @param {Object[]} props.stories - Stories to display.
+ * @param {Error} props.error - Error to display, if any.
+ * @returns {React.Element} The rendered element.
+ */
 const Stories = ({ stories, error }) => (
   <div className="stories">
     <div className="stories-header">
@@ -55,6 +63,12 @@ Stories.defaultProps = {
   error: null,
 };
 
+/**
+ * Map state to properties.
+ *
+ * @param {Object} state - Redux state.
+ * @returns {Object} Properties.
+ */
 const mapStateToProps = state => ({
   stories: getReadableStories(state),
   error: getFetchError(state),

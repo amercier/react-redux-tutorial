@@ -29,6 +29,15 @@ export const StoryProptypes = {
   onArchive: func.isRequired,
 };
 
+/**
+ * Display a story.
+ *
+ * @param {Object} props - Component properties.
+ * @param {Object} props.story - Story to display.
+ * @param {Object} props.columns - Columns settings.
+ * @param {Function} props.onArchive - Function to call when the Archive button is clicked.
+ * @returns {React.Element} The rendered element.
+ */
 const Story = ({ story, columns, onArchive }) => {
   const {
     title,
@@ -58,6 +67,12 @@ const Story = ({ story, columns, onArchive }) => {
 
 Story.propTypes = StoryProptypes;
 
+/**
+ * Map Redux dispatch to properties.
+ *
+ * @param {Function} dispatch - Redux's dispatch.
+ * @returns {Object} Properties.
+ */
 const mapDispatchToProps = dispatch => ({
   onArchive: id => dispatch(doArchiveStory(id)),
 });

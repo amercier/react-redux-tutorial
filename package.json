@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "eslint-config-amercier": "^0.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -53,51 +54,14 @@
     "trailingComma": "all"
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
     "extends": [
-      "airbnb",
-      "plugin:react/recommended",
-      "plugin:unicorn/recommended",
-      "plugin:prettier/recommended",
-      "prettier",
-      "prettier/react",
-      "prettier/unicorn"
+      "amercier/create-react-app",
+      "amercier/with/redux",
+      "amercier/with/redux-saga"
     ],
-    "env": {
-      "browser": true,
-      "node": false
-    },
     "rules": {
-      "unicorn/filename-case": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "src/**/*.js"
-        ],
-        "rules": {
-          "import/prefer-default-export": "off"
-        }
-      },
-      {
-        "files": [
-          "integration/**",
-          "src/**/*.spec.*",
-          "src/setupTests.js"
-        ],
-        "env": {
-          "jest": true
-        },
-        "rules": {
-          "import/no-extraneous-dependencies": [
-            "error",
-            {
-              "devDependencies": true
-            }
-          ]
-        }
-      }
-    ]
+      "jsdoc/require-example": "off"
+    }
   },
   "browserslist": [
     ">0.2%",
