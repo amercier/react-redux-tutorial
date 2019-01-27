@@ -3651,7 +3651,7 @@ eslint-plugin-vue@vuejs/eslint-plugin-vue:
   version "5.1.0"
   resolved "https://codeload.github.com/vuejs/eslint-plugin-vue/tar.gz/6da3caed97c4804b9721f4a86e18af861fa44ba7"
   dependencies:
-    vue-eslint-parser "^5.0.0"
+    vue-eslint-parser "^4.0.2"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -7929,7 +7929,7 @@ prettier@^1.14.2:
   version "1.15.3"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
 
-prettier@^1.15.2:
+prettier@^1.15.2, prettier@^1.16.1:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.1.tgz#534c2c9d7853f8845e5e078384e71973bd74089f"
   integrity sha512-XXUITwIkGb3CPJ2hforHah/zTINRyie5006Jd2HKy2qz7snEJXl0KLfsJZW/wst9g6R2rFvqba3VpNYdu1hDcA==
