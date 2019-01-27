@@ -3633,20 +3633,6 @@ eslint-plugin-strict-vue@^1.0.0:
     ramda "^0.25.0"
     requireindex "~1.1.0"
 
-eslint-plugin-unicorn@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-7.0.0.tgz#b03ade717684d620392bf5458a51758e8e77ea47"
-  integrity sha512-Tz2/2nUwT0qzYzHfOzpib6dltmwivdJd+Kf7GZ4e/xg4INCpVMevl1MKFNFv19n9+g2KMdC7yXgPHdUnXmtiBQ==
-  dependencies:
-    clean-regexp "^1.0.0"
-    eslint-ast-utils "^1.0.0"
-    import-modules "^1.1.0"
-    lodash.camelcase "^4.1.1"
-    lodash.kebabcase "^4.0.1"
-    lodash.snakecase "^4.0.1"
-    lodash.upperfirst "^4.2.0"
-    safe-regex "^2.0.1"
-
 eslint-plugin-unicorn@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-7.1.0.tgz#9efef5c68fde0ebefb0241fbcfa274f1b959c04e"
@@ -3661,11 +3647,11 @@ eslint-plugin-unicorn@^7.1.0:
     lodash.upperfirst "^4.2.0"
     safe-regex "^2.0.1"
 
-"eslint-plugin-vue@github:vuejs/eslint-plugin-vue":
+eslint-plugin-vue@vuejs/eslint-plugin-vue:
   version "5.1.0"
-  resolved "https://codeload.github.com/vuejs/eslint-plugin-vue/tar.gz/9c49dcc8ff792ec6798037bd6b7f4ac3d26fdf68"
+  resolved "https://codeload.github.com/vuejs/eslint-plugin-vue/tar.gz/6da3caed97c4804b9721f4a86e18af861fa44ba7"
   dependencies:
-    vue-eslint-parser "^4.0.2"
+    vue-eslint-parser "^5.0.0"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -9851,10 +9837,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-eslint-parser@^4.0.2:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-4.0.3.tgz#80cf162e484387b2640371ad21ba1f86e0c10a61"
-  integrity sha512-AUeQsYdO6+7QXCems+WvGlrXd37PHv/zcRQSQdY1xdOMwdFAPEnMBsv7zPvk0TPGulXkK/5p/ITgrjiYB7k3ag==
+vue-eslint-parser@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-5.0.0.tgz#00f4e4da94ec974b821a26ff0ed0f7a78402b8a1"
+  integrity sha512-JlHVZwBBTNVvzmifwjpZYn0oPWH2SgWv5dojlZBsrhablDu95VFD+hriB1rQGwbD+bms6g+rAFhQHk6+NyiS6g==
   dependencies:
     debug "^4.1.0"
     eslint-scope "^4.0.0"
